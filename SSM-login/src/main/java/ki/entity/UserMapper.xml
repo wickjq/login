@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+ <mapper namespace="ki.dao.UserDao">
+ 	
+ 	
+ 	<select id="check" parameterType="String" resultType="ki.entity.User">
+ 		select * from user where username=#{username}
+ 	</select>
+ 	
+ 	<insert id="save" parameterType="ki.entity.User">
+ 		insert into user(username,password)
+ 		values(
+ 		#{username},#{password}
+ 		)
+ 	</insert>
+ </mapper>
